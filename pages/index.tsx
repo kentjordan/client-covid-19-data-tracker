@@ -10,7 +10,5 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="font-bold font-robotoMono">/index.tsx</h1>
-
     </div>)
 }
