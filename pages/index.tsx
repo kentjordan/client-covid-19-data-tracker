@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import NotYetDone from '../helpers/pages/NotYetDone'
 export default function Home() {
 
   return (
@@ -10,8 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className='text-4xl font-bold'>COVID-19 DATA TRACKER</h1>
-      <h1 className='text-lg mt-4'>Work in progress. Stay tuned. </h1>
+      <NotYetDone />
 
     </div>)
 }
