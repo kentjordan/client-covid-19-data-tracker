@@ -32,10 +32,10 @@ const Table = ({ fields }: Props) => {
                 </thead>
                 <tbody>
                     {
-                        fields?.map((field) => {
+                        fields?.map((field, i) => {
 
                             return (
-                                <tr className="border-b">
+                                <tr key={i} className="border-b">
                                     <td className="p-4">{field.rank}</td>
                                     <td className="p-4">
                                         <div className="flex items-center">
