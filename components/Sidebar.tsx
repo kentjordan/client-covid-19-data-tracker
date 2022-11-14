@@ -13,8 +13,6 @@ import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { motion } from 'framer-motion';
 import SidebarContext from "@contexts/Sidebar.context";
 
-
-
 const Sidebar = () => {
 
   const { menuVisibility: { isVisible, setVisibility } } = useContext(SidebarContext);
@@ -36,18 +34,18 @@ const Sidebar = () => {
       <div className="mt-24">
         <ul>
           <li >
-            <Link href='/dashboard' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
+            <Link onClick={closeSidebar} href='/dashboard' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
               <Image className="m-2" src={IconDashboard} width={32} alt='Dashboard' />
               <h1 className="m-2 ">International</h1></Link>
           </li>
           <li >
-            <Link href='/countries' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
+            <Link onClick={closeSidebar} href='/countries' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
               <Image className="m-2" src={IconCountries} width={32} alt='Dashboard' />
               <h1 className="m-2">Countries</h1>
             </Link>
           </li>
           <li >
-            <Link href='faqs' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
+            <Link onClick={closeSidebar} href='faqs' className="mt-2 p-2 text-base flex items-center hover:invert hover:bg-white hover:rounded-md hover:cursor-pointer">
               <Image className="m-2" src={IconFAQs} width={32} alt='Dashboard' />
               <h1 className="m-2">F.A.Qs</h1>
             </Link>
