@@ -26,8 +26,9 @@ const DashboardContainer = () => {
 
             </div>
 
-            <div className="w-full h-auto flex flex-wrap justify-center mt-12">
-                <div className="max-w-[560px] w-full m-2">
+            <div className="w-full h-auto flex flex-wrap justify-center mt-24">
+
+                <div className="max-w-[560px] w-full m-4">
                     <div className="mb-4">
                         <h1 className="text-2xl font-bold mb-4">Top 5 Countries by Cases</h1>
                         <Table fields={[
@@ -40,7 +41,8 @@ const DashboardContainer = () => {
                     </div>
                     <LineChart label="Deaths" />
                 </div>
-                <div className="max-w-[560px] w-full m-2">
+
+                <div className="max-w-[560px] w-full m-4">
                     <LineChart label="Vaccinated" />
                     <LineChart label="Recovered" />
                 </div>

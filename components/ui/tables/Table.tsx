@@ -23,11 +23,11 @@ const Table = ({ fields }: Props) => {
             <table className="text-center text-sm">
                 <thead className="border-b">
                     <tr>
-                        <th className="p-4 text-stone-400">RANK</th>
-                        <th className="p-4 text-stone-400">COUNTRY</th>
-                        <th className="p-4 text-stone-400">TOTAL CASES</th>
-                        <th className="p-4 text-stone-400">TOTAL DEATHS</th>
-                        <th className="p-4 text-stone-400">TOTAL REOCOVERED</th>
+                        <th className="px-4 py-8 text-stone-400">RANK</th>
+                        <th className="px-4 py-8 text-stone-400">COUNTRY</th>
+                        <th className="px-4 py-8 text-stone-400">TOTAL CASES</th>
+                        <th className="px-4 py-8 text-stone-400">TOTAL DEATHS</th>
+                        <th className="px-4 py-8 text-stone-400">TOTAL REOCOVERED</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,16 +36,16 @@ const Table = ({ fields }: Props) => {
 
                             return (
                                 <tr key={i} className="border-b">
-                                    <td className="p-4">{field.rank}</td>
-                                    <td className="p-4">
+                                    <td className="py-8">{field.rank}</td>
+                                    <td className="py-8">
                                         <div className="flex items-center">
                                             <Image className="mr-1" src={`https://countryflagsapi.com/png/${field.iso_alpha_3.toLowerCase()}`} width={32} height={32} alt={`${field.iso_alpha_3} Flag`} />
                                             <p className="ml-1">{field.country_name}</p>
                                         </div>
                                     </td>
-                                    <td className="p-4">{field.total_cases.toLocaleString('en-US')}</td>
-                                    <td className="p-4">{field.total_deaths.toLocaleString('en-US')}</td>
-                                    <td className="p-4">{field.total_vaccinated.toLocaleString('en-US')}</td>
+                                    <td className="py-8">{field.total_cases.toLocaleString('en-US')}</td>
+                                    <td className="py-8">{field.total_deaths.toLocaleString('en-US')}</td>
+                                    <td className="py-8">{field.total_vaccinated.toLocaleString('en-US')}</td>
                                 </tr>
                             )
                         })
