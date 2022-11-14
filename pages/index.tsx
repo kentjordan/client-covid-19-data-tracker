@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import NotYetDone from '../helpers/pages/NotYetDone'
+import NotYetDone from '../components/pages/NotYetDone'
+
 export default function Home() {
 
   return (
@@ -13,5 +14,6 @@ export default function Home() {
 
       <NotYetDone />
 
-    </div>)
+    </div>
+  )
 }

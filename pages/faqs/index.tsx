@@ -1,5 +1,5 @@
 import React from "react";
-import NotYetDone from "../../helpers/pages/NotYetDone";
+import NotYetDone from "../../components/pages/NotYetDone";
 
 const FAQs = () => {
     return (
