@@ -23,7 +23,7 @@ const Sidebar = () => {
     console.log('isClosed? ', isVisible);
   });
 
-  return <motion.div initial={{ x: -300 }} animate={{ x: isVisible ? -300 : 0 }} transition={{ bounce: 0.5, ease: 'anticipate' }} id='sidebar' className={`bg-white h-full min-w-[300px] flex-col flex fixed z-10 justify-between items-center py-12 border-r-[2px]`}>
+  return <motion.div initial={{ x: -350 }} animate={{ x: isVisible ? -350 : 0 }} transition={{ bounce: 0.5, ease: 'anticipate' }} id='sidebar' className={`bg-white h-full min-w-[300px] flex-col flex fixed z-10 justify-between items-center py-12 border-r-[2px]`}>
 
     <div className="">
       <div className="flex justify-center items-center ">
