@@ -28,7 +28,7 @@ type props = {
 }
 
 const LineChart = ({ label }: props) => {
-    return <div className="max-w-[512px] w-full my-2 shadow rounded border-[1px] border-stone-300 p-8">
+    return <div className="w-full shadow rounded border-[1px] border-stone-300 p-8 my-4">
         <h1 className="font-bold mb-5 text-2xl">{label}</h1>
         <Line data={{
 

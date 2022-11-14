@@ -5,7 +5,7 @@ type props = { data: number, type: 'Cases' | 'Deaths' | 'Vaccinated' | 'Recovere
 const IntlConfirmedData = ({ data, type }: props) => {
 
     return (
-        <div className="max-w-[256px] w-full h-auto bg-white rounded px-6 pt-8 m-2 shadow">
+        <div className="w-full h-auto bg-white rounded px-6 pt-8 m-2 shadow">
             <h1 className="font-bold text-md text-[#747474] ">Total {type}</h1>
             <div className={`h-[3px] w-full my-1 ${hrColor(type)} rounded-lg`}></div>
             <h1 className="font-bold text-xl mt-4 relative my-4">{data.toLocaleString('en-US')}</h1>
