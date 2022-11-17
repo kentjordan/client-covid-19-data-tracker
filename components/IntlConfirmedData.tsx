@@ -3,6 +3,7 @@ import React from 'react';
 import moment from 'moment';
 
 import { AiOutlineInfoCircle } from 'react-icons/ai';
+import Tooltip from './Tooltip';
 
 interface props {
   data: Partial<{ total: number; new: number } | undefined>;
@@ -16,30 +17,47 @@ const IntlConfirmedData = ({ data, type }: props) => {
         <span className="text-md inline font-bold leading-[1px] text-[#747474]">
           Total {type}
         </span>
-
-        <div className="group relative z-20 mx-2 inline-block">
-          <span className="invisible absolute top-[-110px] z-10 w-[200px] rounded bg-stone-800 p-2 text-sm text-white group-hover:visible">
-            Total confirmed cases of COVID-19. Counts can include probable
-            cases, where reported.
-          </span>
-          <AiOutlineInfoCircle size={16} color="#747474"></AiOutlineInfoCircle>
-        </div>
+        <Tooltip className="mx-2" type={type} />
       </div>
 
       <div className={`my-3 h-[2px] w-full ${hrColor(type)} rounded-lg`}></div>
 
-      <span className="relative block text-xl font-bold">
+      <span className={`relative block text-xl font-bold`}>
         {data !== undefined
           ? data?.total?.toLocaleString('en-US')
           : 'undefined'}
       </span>
       {(type === 'Cases' || type === 'Deaths') && (
-        <span className="my-2 block text-sm italic text-stone-600">{`+${data?.new?.toLocaleString(
-          'en-US'
-        )} as of ${moment().format('MMM. Do YYYY')}`}</span>
+        <>
+          <span
+            className={`my-2 text-sm font-bold italic ${generateTextColor(
+              type
+            )}`}
+          >
+            {`+${data?.new?.toLocaleString('en-US')} `}
+          </span>
+          <span className=" text-sm font-normal not-italic text-stone-600">
+            {`as of ${moment().format('MMM. Do YYYY')}`}
+          </span>
+        </>
       )}
     </div>
   );
+};
+
+const generateTextColor = (type: string) => {
+  switch (type) {
+    case 'Cases':
+      return 'text-yellow-500';
+    case 'Deaths':
+      return 'text-red-500';
+    case 'Vaccinated':
+      return 'text-blue-500';
+    case 'Booster':
+      return 'text-green-500';
+    default:
+      return `text-stone-500`;
+  }
 };
 
 const hrColor = (type: string) => {

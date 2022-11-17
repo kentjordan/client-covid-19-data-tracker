@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="absolute flex h-24 w-full flex-col items-center justify-center bg-stone-900 text-white">
       <h1 className="text-lg font-bold">Made by Kent Jordan</h1>
       <p className="mt-1 text-xs text-stone-400">
-        Build on top of Next, Express & Typescript
+        Built on top of Next, Express & Typescript
       </p>
     </div>
   );

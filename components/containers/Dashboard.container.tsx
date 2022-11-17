@@ -33,7 +33,7 @@ const DashboardContainer = (data: IDashboard) => {
         </div>
         <div className="flex w-[580px]">
           <IntlConfirmedData
-            data={{ total: data.people_fully_vaccinated }}
+            data={{ total: data.people_vaccinated }}
             type={'Vaccinated'}
           />
           <IntlConfirmedData
