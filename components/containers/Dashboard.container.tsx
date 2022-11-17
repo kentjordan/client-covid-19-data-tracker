@@ -32,17 +32,21 @@ const DashboardContainer = (data: IDashboard) => {
           />
         </div>
         <div className="flex w-[580px]">
-          <IntlConfirmedData data={{ total: 0, new: 0 }} type={'Vaccinated'} />
-          <IntlConfirmedData data={{ total: 0, new: 0 }} type={'Booster'} />
+          <IntlConfirmedData
+            data={{ total: data.people_fully_vaccinated }}
+            type={'Vaccinated'}
+          />
+          <IntlConfirmedData
+            data={{ total: data.total_boosters }}
+            type={'Booster'}
+          />
         </div>
       </div>
 
       <div className="mt-24 flex h-auto w-full flex-wrap justify-center">
         <div className="m-4 w-full max-w-[560px]">
           <div className="mb-4">
-            <h1 className="mb-4 text-2xl font-bold">
-              Top 5 Countries by Cases
-            </h1>
+            <h1 className="mb-4 text-xl font-bold">Top 5 Countries by Cases</h1>
             <Table
               fields={[
                 {

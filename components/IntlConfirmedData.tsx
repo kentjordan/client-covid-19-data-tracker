@@ -2,6 +2,8 @@ import React from 'react';
 
 import moment from 'moment';
 
+import { AiOutlineInfoCircle } from 'react-icons/ai';
+
 interface props {
   data: Partial<{ total: number; new: number } | undefined>;
   type: 'Cases' | 'Deaths' | 'Vaccinated' | 'Booster';
@@ -9,31 +11,30 @@ interface props {
 
 const IntlConfirmedData = ({ data, type }: props) => {
   return (
-    <div className="m-2 h-auto w-full rounded  bg-white p-4 px-4 pt-6 shadow">
-      <span className="text-md inline-block font-bold text-[#747474]">
-        Total {type}
-      </span>
-
-      {/* <div className="relative inline-block">
-        <span className=" l-0 absolute top-0 z-10 mt-[-100px] w-[200px] rounded bg-stone-800 p-2 text-sm text-white">
-          Total confirmed cases of COVID-19. Counts can include probable cases,
-          where reported.
+    <div className="m-2 h-auto w-full rounded bg-white p-2 px-4 pt-6 shadow">
+      <div className="flex items-center ">
+        <span className="text-md inline font-bold leading-[1px] text-[#747474]">
+          Total {type}
         </span>
-        <AiOutlineInfoCircle
-          className="mx-1"
-          size={16}
-          color="#747474"
-        ></AiOutlineInfoCircle>
-      </div> */}
 
-      <div className={`my-1 h-[3px] w-full ${hrColor(type)} rounded-lg`}></div>
-      <span className="relative mt-4 block text-xl font-bold">
+        <div className="group relative z-20 mx-2 inline-block">
+          <span className="invisible absolute top-[-110px] z-10 w-[200px] rounded bg-stone-800 p-2 text-sm text-white group-hover:visible">
+            Total confirmed cases of COVID-19. Counts can include probable
+            cases, where reported.
+          </span>
+          <AiOutlineInfoCircle size={16} color="#747474"></AiOutlineInfoCircle>
+        </div>
+      </div>
+
+      <div className={`my-3 h-[2px] w-full ${hrColor(type)} rounded-lg`}></div>
+
+      <span className="relative block text-xl font-bold">
         {data !== undefined
           ? data?.total?.toLocaleString('en-US')
           : 'undefined'}
       </span>
       {(type === 'Cases' || type === 'Deaths') && (
-        <span className="my-1 block text-sm italic text-stone-600">{`+${data?.new?.toLocaleString(
+        <span className="my-2 block text-sm italic text-stone-600">{`+${data?.new?.toLocaleString(
           'en-US'
         )} as of ${moment().format('MMM. Do YYYY')}`}</span>
       )}
