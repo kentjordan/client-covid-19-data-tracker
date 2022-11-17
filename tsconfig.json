@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,26 +15,14 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": [
-        "./components/*"
-      ],
-      "@assets/*": [
-        "./assets/*"
-      ],
-      "@contexts/*": [
-        "./helpers/contexts/*"
-      ],
-      "@animations/*": [
-        "./animations/*"
-      ],
+      "@components/*": ["./components/*"],
+      "@assets/*": ["./assets/*"],
+      "@contexts/*": ["./helpers/contexts/*"],
+      "@animations/*": ["./animations/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@interfaces/*": ["./interfaces/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

@@ -3,10 +3,14 @@ import { useContext } from 'react';
 import SidebarContext from '@contexts/Sidebar.context';
 
 const SidebarMenu = () => {
+  const { isVisible, setVisibility } = useContext(SidebarContext);
 
-    const { menuVisibility: { isVisible, setVisibility } } = useContext(SidebarContext);
-
-    return <TbMenu onClick={() => setVisibility?.(!isVisible)} className="h-[32px] w-[32px] absolute m-8 z-10 cursor-pointer block" ></TbMenu>
+  return (
+    <TbMenu
+      onClick={() => setVisibility?.(!isVisible)}
+      className="absolute z-10 m-8 block h-[32px] w-[32px] cursor-pointer"
+    ></TbMenu>
+  );
 };
 
 export default SidebarMenu;
