@@ -9,7 +9,7 @@ const Dashboard = (data: IDashboard) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.25 }}
-      className="min-h-[100vh] w-full bg-[rgb(250,250,250)]"
+      className="flex min-h-[100vh] w-full items-center justify-center bg-[rgb(250,250,250)]"
     >
       <DashboardContainer {...data} />
     </motion.div>
@@ -17,10 +17,10 @@ const Dashboard = (data: IDashboard) => {
 };
 
 export const getStaticProps = async () => {
-  const dashboard_data = (await axios.get('http://localhost:7777')).data;
+  const data: IDashboard = (await axios.get('http://localhost:7777')).data;
 
   return {
-    props: dashboard_data,
+    props: data,
   };
 };
 

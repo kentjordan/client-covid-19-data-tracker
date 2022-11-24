@@ -15,7 +15,7 @@ const DashboardContainer = (data: IDashboard) => {
       </h1>
 
       <p className="mt-4 max-w-[64ch] text-center text-sm text-[#747474]">
-        Data was updated {moment('2022-10-31', 'YYYY-MM-DD').fromNow()}
+        Data was updated {moment(data.date, 'YYYY-MM-DD').fromNow()}
       </p>
 
       <div className="mt-8 mb-12 h-[1px] w-[90%] bg-stone-300"></div>
